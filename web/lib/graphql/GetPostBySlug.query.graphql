@@ -1,0 +1,12 @@
+query GetPostBySlug($slug: String!) {
+  allPost(where: { slug: { current: { eq: $slug }}}) {
+    slug {
+      current
+    }
+    title
+    publishedAt
+    author {
+      bioRaw
+    }
+  }
+}

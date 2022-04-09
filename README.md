@@ -16,5 +16,5 @@ There is one thing missing from the graphql types and that is **Portable Text** 
 
 # TODO
 - Make America great again.
-- Get that sweet caching going
-- Truly show all you can do not just getStaticProps
+- Get that sweet caching going.
+- Truly show all you can do not just getStaticProps.

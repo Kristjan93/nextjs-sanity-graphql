@@ -22,7 +22,6 @@ export type Scalars = {
 };
 
 export type Author = Document & {
-  __typename?: 'Author';
   /** Date the document was created */
   _createdAt?: Maybe<Scalars['DateTime']>;
   /** Document ID */
@@ -67,7 +66,6 @@ export type AuthorSorting = {
 };
 
 export type Block = {
-  __typename?: 'Block';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   children?: Maybe<Array<Maybe<Span>>>;
@@ -85,7 +83,6 @@ export type BooleanFilter = {
 };
 
 export type Category = Document & {
-  __typename?: 'Category';
   /** Date the document was created */
   _createdAt?: Maybe<Scalars['DateTime']>;
   /** Document ID */
@@ -188,7 +185,6 @@ export type DocumentSorting = {
 };
 
 export type File = {
-  __typename?: 'File';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   asset?: Maybe<SanityFileAsset>;
@@ -221,7 +217,6 @@ export type FloatFilter = {
 };
 
 export type Geopoint = {
-  __typename?: 'Geopoint';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   alt?: Maybe<Scalars['Float']>;
@@ -257,7 +252,6 @@ export type IdFilter = {
 };
 
 export type Image = {
-  __typename?: 'Image';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   asset?: Maybe<SanityImageAsset>;
@@ -296,7 +290,6 @@ export type IntFilter = {
 };
 
 export type Post = Document & {
-  __typename?: 'Post';
   /** Date the document was created */
   _createdAt?: Maybe<Scalars['DateTime']>;
   /** Document ID */
@@ -347,7 +340,6 @@ export type PostSorting = {
 };
 
 export type RootQuery = {
-  __typename?: 'RootQuery';
   Author?: Maybe<Author>;
   Category?: Maybe<Category>;
   Document?: Maybe<Document>;
@@ -441,7 +433,6 @@ export type RootQueryAllSanityImageAssetArgs = {
 };
 
 export type SanityAssetSourceData = {
-  __typename?: 'SanityAssetSourceData';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   /** The unique ID for the asset within the originating source so you can programatically find back to it */
@@ -469,7 +460,6 @@ export type SanityAssetSourceDataSorting = {
 };
 
 export type SanityFileAsset = Document & {
-  __typename?: 'SanityFileAsset';
   /** Date the document was created */
   _createdAt?: Maybe<Scalars['DateTime']>;
   /** Document ID */
@@ -543,7 +533,6 @@ export type SanityFileAssetSorting = {
 };
 
 export type SanityImageAsset = Document & {
-  __typename?: 'SanityImageAsset';
   /** Date the document was created */
   _createdAt?: Maybe<Scalars['DateTime']>;
   /** Document ID */
@@ -623,7 +612,6 @@ export type SanityImageAssetSorting = {
 };
 
 export type SanityImageCrop = {
-  __typename?: 'SanityImageCrop';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   bottom?: Maybe<Scalars['Float']>;
@@ -651,7 +639,6 @@ export type SanityImageCropSorting = {
 };
 
 export type SanityImageDimensions = {
-  __typename?: 'SanityImageDimensions';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   aspectRatio?: Maybe<Scalars['Float']>;
@@ -676,7 +663,6 @@ export type SanityImageDimensionsSorting = {
 };
 
 export type SanityImageHotspot = {
-  __typename?: 'SanityImageHotspot';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   height?: Maybe<Scalars['Float']>;
@@ -704,7 +690,6 @@ export type SanityImageHotspotSorting = {
 };
 
 export type SanityImageMetadata = {
-  __typename?: 'SanityImageMetadata';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   blurHash?: Maybe<Scalars['String']>;
@@ -741,7 +726,6 @@ export type SanityImageMetadataSorting = {
 };
 
 export type SanityImagePalette = {
-  __typename?: 'SanityImagePalette';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   darkMuted?: Maybe<SanityImagePaletteSwatch>;
@@ -778,7 +762,6 @@ export type SanityImagePaletteSorting = {
 };
 
 export type SanityImagePaletteSwatch = {
-  __typename?: 'SanityImagePaletteSwatch';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   background?: Maybe<Scalars['String']>;
@@ -813,7 +796,6 @@ export type Sanity_DocumentFilter = {
 };
 
 export type Slug = {
-  __typename?: 'Slug';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   current?: Maybe<Scalars['String']>;
@@ -839,7 +821,6 @@ export enum SortOrder {
 }
 
 export type Span = {
-  __typename?: 'Span';
   _key?: Maybe<Scalars['String']>;
   _type?: Maybe<Scalars['String']>;
   marks?: Maybe<Array<Maybe<Scalars['String']>>>;
@@ -862,12 +843,12 @@ export type GetPostBySlugQueryVariables = Exact<{
 }>;
 
 
-export type GetPostBySlugQuery = { __typename?: 'RootQuery', allPost: Array<{ __typename?: 'Post', title?: string | null, publishedAt?: any | null, slug?: { __typename?: 'Slug', current?: string | null } | null, author?: { __typename?: 'Author', bioRaw?: any | null } | null }> };
+export type GetPostBySlugQuery = { allPost: Array<{ title?: string | null, publishedAt?: any | null, slug?: { current?: string | null } | null, author?: { bioRaw?: any | null } | null }> };
 
 export type GetPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPostsQuery = { __typename?: 'RootQuery', allPost: Array<{ __typename: 'Post', title?: string | null, publishedAt?: any | null, slug?: { __typename: 'Slug', current?: string | null } | null, author?: { __typename: 'Author', bioRaw?: any | null } | null }> };
+export type GetPostsQuery = { allPost: Array<{ title?: string | null, publishedAt?: any | null, slug?: { current?: string | null } | null, author?: { bioRaw?: any | null } | null }> };
 
 
 export const GetPostBySlugDocument = gql`
@@ -917,15 +898,12 @@ export const GetPostsDocument = gql`
   allPost {
     slug {
       current
-      __typename
     }
     title
     publishedAt
     author {
       bioRaw
-      __typename
     }
-    __typename
   }
 }
     `;

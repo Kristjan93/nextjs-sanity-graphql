@@ -1,5 +1,10 @@
 import { useMemo } from 'react';
-import { ApolloClient, HttpLink, InMemoryCache, NormalizedCacheObject } from '@apollo/client';
+import {
+  ApolloClient, 
+  HttpLink, 
+  InMemoryCache, 
+  NormalizedCacheObject 
+} from '@apollo/client';
 import { relayStylePagination } from "@apollo/client/utilities";
 import merge from 'deepmerge';
 import isEqual from 'lodash/isEqual';

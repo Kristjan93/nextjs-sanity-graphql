@@ -1,13 +1,17 @@
 import { PortableText } from "@portabletext/react";
 import { GetStaticPaths, GetStaticProps } from "next";
-import client from "../../lib/graphql/client";
+import { addApolloState, initializeApollo } from "../../lib/graphql/client";
 import {
   GetPostBySlugDocument,
   GetPostBySlugQuery, GetPostsDocument,
-  GetPostsQuery
+  GetPostsQuery,
+  useGetPostBySlugQuery,
+  useGetPostsQuery
 } from '../../lib/graphql/generated/graphql';
 
 export const getStaticPaths:GetStaticPaths = async () => {
+  const client = initializeApollo()
+
   const { data } = await client.query<GetPostsQuery>({
     query: GetPostsDocument,
   });
@@ -19,6 +23,8 @@ export const getStaticPaths:GetStaticPaths = async () => {
 }
 
 export const getStaticProps:GetStaticProps = async (context) => {
+  const client = initializeApollo()
+
   const slug = context.params?.slug as string
 
   const { data } = await client.query<GetPostBySlugQuery>({
@@ -26,11 +32,11 @@ export const getStaticProps:GetStaticProps = async (context) => {
     variables: { slug }
   });
 
-  return {
+  return addApolloState(client, {
     props: {
       data
     },
- };
+  });
 }
 
 interface IPostPageProps {

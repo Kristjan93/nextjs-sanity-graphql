@@ -2,11 +2,14 @@ query GetPosts {
   allPost {
     slug {
       current
+      __typename
     }
     title
     publishedAt
     author {
       bioRaw
+      __typename
     }
+    __typename
   }
 }

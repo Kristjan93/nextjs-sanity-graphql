@@ -867,7 +867,7 @@ export type GetPostBySlugQuery = { __typename?: 'RootQuery', allPost: Array<{ __
 export type GetPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPostsQuery = { __typename?: 'RootQuery', allPost: Array<{ __typename?: 'Post', title?: string | null, publishedAt?: any | null, slug?: { __typename?: 'Slug', current?: string | null } | null, author?: { __typename?: 'Author', bioRaw?: any | null } | null }> };
+export type GetPostsQuery = { __typename?: 'RootQuery', allPost: Array<{ __typename: 'Post', title?: string | null, publishedAt?: any | null, slug?: { __typename: 'Slug', current?: string | null } | null, author?: { __typename: 'Author', bioRaw?: any | null } | null }> };
 
 
 export const GetPostBySlugDocument = gql`
@@ -917,12 +917,15 @@ export const GetPostsDocument = gql`
   allPost {
     slug {
       current
+      __typename
     }
     title
     publishedAt
     author {
       bioRaw
+      __typename
     }
+    __typename
   }
 }
     `;
